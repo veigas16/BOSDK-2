@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KPI outputformat="introscope" name="BOE_KPIs">
+  <LastUpdate type="StringEvent" name=":Current Value" value=""></LastUpdate>
+  <NumberOfWebIReports type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'webi' and si_instance=0</NumberOfWebIReports>
+  <NumberOfWebIReportInstances type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'webi' and si_instance=1</NumberOfWebIReportInstances>
+  <NumberOfCrystalReports type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'CrystalReport' and SI_instance = 0</NumberOfCrystalReports>
+  <NumberOfCrystalReportInstances type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'CrystalReport' and SI_instance = 1</NumberOfCrystalReportInstances>
+  <NumberOfDeskIReports type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'FullClient' and SI_instance = 0</NumberOfDeskIReports>
+  <NumberOfDeskIReportInstances type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'FullClient' and SI_instance = 1</NumberOfDeskIReportInstances>
+  <NumberOfXcelcuisModels type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'Xcelsius' and SI_instance = 0</NumberOfXcelcuisModels>
+  <NumberOfSWFs type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'flash' and SI_instance = 0</NumberOfSWFs>
+  <NumberOfPrograms type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'Program' and SI_instance = 0</NumberOfPrograms>
+  <NumberOfProgramInstances type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'Program' and SI_instance = 1</NumberOfProgramInstances>
+  <NumberOfExplorerInfoSpaces type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'DataDiscovery' and SI_instance = 0</NumberOfExplorerInfoSpaces>
+  <NumberOfPublications type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_INFOOBJECTS  where si_kind = 'Publication' and SI_instance = 0</NumberOfPublications>
+  <NumberOfUniverses type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_APPOBJECTS where SI_KIND = 'Universe'</NumberOfUniverses>
+  <NumberOfConnections type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_APPOBJECTS WHERE SI_KIND='MetaData.DataConnection'</NumberOfConnections>
+  <NumberOfProcessType type="IntCounterNone" name=":Current Value" value="" count="1"></NumberOfProcessType>
+  <LastUpdateOfUniverses type="StringEvent" name=":Current Value" value="">select top 1 SI_UPDATE_TS FROM CI_APPOBJECTS  where si_kind = 'universe' order by SI_UPDATE_TS desc</LastUpdateOfUniverses>
+  <NumberOfUserGroups type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM CI_SYSTEMOBJECTS where SI_KIND='UserGroup'</NumberOfUserGroups>
+  <CMSQuery>select top 1 SI_ID, SI_NAME, SI_FRIENDLY_NAME, SI_DESCRIPTION, SI_METRICS, SI_UPDATE_TS from ci_appobjects, ci_systemobjects, ci_infoobjects where si_kind='Server' and si_server_kind='aps' and SI_SERVER_IS_ALIVE='1' ORDER BY SI_ID</CMSQuery>
+  <NumberOfUsersLoggedOnConcurrent type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.UserCount.ConnectedConcurrent\SI_VALUE</NumberOfUsersLoggedOnConcurrent>
+  <NumberOfUsersLoggedOnNamed type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.UserCount.ConnectedNamedUsers\SI_VALUE</NumberOfUsersLoggedOnNamed>
+  <NumberOfUsersConcurrent type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.UserCount.ExistingConcurrent\SI_VALUE</NumberOfUsersConcurrent>
+  <NumberOfUsersNamed type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.UserCount.ExistingNamedUsers\SI_VALUE</NumberOfUsersNamed>
+  <NumberOfSchedulesPending type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.JobCount.PendingJobs\SI_VALUE</NumberOfSchedulesPending>
+  <NumberOfSchedulesCompleted type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.JobCount.SuccessJobs\SI_VALUE</NumberOfSchedulesCompleted>
+  <NumberOfSchedulesFailed type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.JobCount.FailedJobs\SI_VALUE</NumberOfSchedulesFailed>
+  <NumberOfObjectsInCMS type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=APSAdmin\SI_METRICS\SI_NAME=Monitor.SystemDB.NumObjectsInDB\SI_VALUE</NumberOfObjectsInCMS>
+  <ClusterSystem type="StringEvent" name=":Current Value" value="">SI_METRICS\SI_NAME=ISGeneralAdmin\SI_METRICS\SI_NAME=ISPROP_GEN_APSNAME\SI_VALUE</ClusterSystem>
+  <NumberOfEnterpriseNodes type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM ci_appobjects, ci_systemobjects, ci_infoobjects where si_kind='EnterpriseNode'</NumberOfEnterpriseNodes>
+  <NumberOfServersRunning type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM ci_appobjects, ci_systemobjects, ci_infoobjects where si_kind='Server' and SI_SERVER_IS_ALIVE=1</NumberOfServersRunning>
+  <NumberOfServersStopped type="IntCounterNone" name=":Current Value" value="" count="1">select count(si_id) FROM ci_appobjects, ci_systemobjects, ci_infoobjects where si_kind='Server' and SI_SERVER_IS_ALIVE=0</NumberOfServersStopped>
+  <KPIs name="SI_TITLE">+</KPIs>
+  <CMSQuery>select SI_ID, SI_NAME, SI_KIND, si_server_kind, SI_FRIENDLY_NAME, SI_DESCRIPTION, SI_METRICS, SI_UPDATE_TS from ci_appobjects, ci_systemobjects, ci_infoobjects where si_kind='Server' and si_server_kind='jobserver' and SI_SERVER_IS_ALIVE='1' ORDER BY SI_ID</CMSQuery>
+  <ServerKind type="StringEvent" name=":Current Value" value="">SI_SERVER_KIND</ServerKind>
+  <NumberOfCurrentJobs type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=JobServerAdmin\SI_METRICS\SI_NAME=ISPROP_IPROC_CURJOBS\SI_VALUE</NumberOfCurrentJobs>
+  <NumberOfTotalJobs type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=JobServerAdmin\SI_METRICS\SI_NAME=ISPROP_IPROC_TOTALJOBS\SI_VALUE</NumberOfTotalJobs>
+  <NumberOfFailedCreated type="IntCounterNone" name=":Current Value" value="" count="1">SI_METRICS\SI_NAME=JobServerAdmin\SI_METRICS\SI_NAME=ISPROP_IPROC_FAILEDCREATED\SI_VALUE</NumberOfFailedCreated>
+</KPI>
