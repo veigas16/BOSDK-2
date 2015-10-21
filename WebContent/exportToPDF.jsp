@@ -58,7 +58,10 @@
 
 	//Format to PDF
 	BinaryView binaryView2 = (BinaryView)doc.getView(OutputFormatType.PDF);
-
+	response.setContentType("application/pdf"); 
+	response.setHeader("Content-Type", "application/pdf"); 
+	response.setDateHeader("expires", 0); 
+	binaryView2.getContent(response.getOutputStream()); 
 	
 	doc.closeDocument();	
 
