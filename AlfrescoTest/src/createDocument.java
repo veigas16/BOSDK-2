@@ -21,6 +21,10 @@ import com.businessobjects.rebean.wi.DataProvider;
 import com.businessobjects.rebean.wi.Query;
 import com.businessobjects.rebean.wi.DataSource;
 import com.crystaldecisions.sdk.plugin.CeKind;
+import com.businessobjects.rebean.wi.ReportBlock;
+import com.businessobjects.rebean.wi.ReportBody;
+import com.businessobjects.rebean.wi.ReportContainer;
+import com.businessobjects.rebean.wi.ReportStructure;
 
 public class createDocument {
 	public static void main(String[] args) {
@@ -35,7 +39,7 @@ public class createDocument {
 		ISessionMgr sessionManager = CrystalEnterprise.getSessionMgr();
 		IEnterpriseSession enterpriseSession = sessionManager.logon(user, pwd, CMS, auth);
 
-		IUserInfo userInfo = enterpriseSession.getUserInfo();
+		//IUserInfo userInfo = enterpriseSession.getUserInfo();
 
 		ReportEngines reportEngines = null;
 		ReportEngine wiRepEngine = null;
@@ -50,7 +54,7 @@ public class createDocument {
 
 		// Locate the desired universe that is going to be used on the document
 		IInfoStore infoStore = (IInfoStore) enterpriseSession.getService("InfoStore");
-		String unvQuery = "select * from CI_APPOBJECTS where SI_KIND = 'DSL.MetaDataFile' and SI_NAME like '%Sinistro Painel_SAP%'";
+		String unvQuery = "select * from CI_APPOBJECTS where SI_KIND = 'Universe' and SI_NAME like '%eFashion%'";
 		IInfoObjects infoObjects = (IInfoObjects) infoStore.query(unvQuery);
 		IInfoObject infoObject = (IInfoObject) infoObjects.get(0);
 
@@ -60,7 +64,7 @@ public class createDocument {
 		DocumentInstance documentInstance = wiRepEngine.newDocument("UnivCUID=" + infoObject.getCUID());
 
 		// Locate the Target folder where the new document its going to be saved
-		String folderQuery = "select * from CI_INFOOBJECTS where SI_KIND = 'Folder' and SI_NAME='Porto_Seguro'";
+		String folderQuery = "select * from CI_INFOOBJECTS where SI_KIND = 'Folder' and SI_NAME like '%WebIntelligence'";
 		infoObjects = (IInfoObjects) infoStore.query(folderQuery);
 		infoObject = (IInfoObject) infoObjects.get(0);
 
